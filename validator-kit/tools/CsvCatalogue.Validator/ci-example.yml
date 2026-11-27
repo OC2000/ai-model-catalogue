@@ -1,0 +1,36 @@
+# TEMPLATE ONLY: not installed in .github/workflows; no promotion or network research.
+# Assumes kit is vendored at validator-kit and candidate/previous files exist.
+# First runner proof: run both platforms; Linux is not yet verified.
+name: Offline catalogue validation
+on: [pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      # Pin these actions to reviewed immutable action SHAs before deployment.
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.403'
+      - shell: pwsh
+        run: |
+          ./validator-kit/tools/CsvCatalogue.Validator/Verify-Kit.ps1 -KitRoot validator-kit
+          Set-Location validator-kit
+          dotnet restore tools/CsvCatalogue.Validator --locked-mode --ignore-failed-sources
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          dotnet build tools/CsvCatalogue.Validator -c Release --no-restore
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          ./tools/CsvCatalogue.Validator/Test-Kit.ps1 -OutputDirectory synthetic-smoke
+          dotnet tools/CsvCatalogue.Validator/bin/Release/net10.0/CsvCatalogue.Validator.dll --csv ../candidate.csv --previous ../accepted.csv --kind candidate --json ../validation.json
+          exit $LASTEXITCODE
+# Tom's errors-only policy: warnings are reported and do not block exit 0.
+# After the runner proof, use Linux if successful, otherwise windows-latest.
+# External promotion still binds exact bytes and excludes synthetic input.

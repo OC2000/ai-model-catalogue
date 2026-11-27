@@ -1,0 +1,72 @@
+# Offline app-validator check for catalogue releases (kit 1.1.0, vendored at validator-kit/).
+# Read-only: no credentials, no promotion, no schedule. Warning policy: errors only (exit 0 passes).
+name: App validator
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: '10.0.403'
+      - name: Choose candidate and previous release
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="${GITHUB_BASE_REF:-main}"
+          git fetch -q origin "$base" || true
+          accepted=$(git show "origin/$base:accepted.json" 2>/dev/null | python3 -c 'import json,sys; print(json.load(sys.stdin)["file"])' || python3 -c 'import json; print(json.load(open("accepted.json"))["file"])')
+          candidate=$(ls releases/ai-model-catalogue-v6-*-rev*.csv | sort -V | tail -1)
+          if [ "$candidate" = "$accepted" ]; then
+            previous=$(ls releases/ai-model-catalogue-v6-*-rev*.csv | sort -V | tail -2 | head -1)
+          else
+            previous="$accepted"
+          fi
+          git show "origin/$base:$previous" > previous.csv 2>/dev/null || cp "$previous" previous.csv
+          echo "CANDIDATE=$candidate" >> "$GITHUB_ENV"
+          echo "PREVIOUS=$previous" >> "$GITHUB_ENV"
+          echo "candidate=$candidate previous=$previous"
+      - name: Verify kit, build, smoke test, validate
+        shell: pwsh
+        run: |
+          ./validator-kit/tools/CsvCatalogue.Validator/Verify-Kit.ps1 -KitRoot validator-kit
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Set-Location validator-kit
+          dotnet --version
+          dotnet restore tools/CsvCatalogue.Validator --locked-mode --ignore-failed-sources
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          dotnet build tools/CsvCatalogue.Validator -c Release --no-restore
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          ./tools/CsvCatalogue.Validator/Test-Kit.ps1 -OutputDirectory ../out/synthetic-smoke
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $dll = "tools/CsvCatalogue.Validator/bin/Release/net10.0/CsvCatalogue.Validator.dll"
+          dotnet $dll --csv "../$env:CANDIDATE" --kind candidate --previous ../previous.csv --json ../out/validation.json
+          $code = $LASTEXITCODE
+          Write-Host "candidate validation exit: $code"
+          if ($code) { exit $code }
+          $m = Get-Content ../latest.json -Raw -ErrorAction SilentlyContinue | ConvertFrom-Json -ErrorAction SilentlyContinue
+          if ($m -and $m.csvUrl.EndsWith("/" + (Split-Path $env:CANDIDATE -Leaf))) {
+            dotnet $dll --csv "../$env:CANDIDATE" --kind candidate --previous ../previous.csv --manifest ../latest.json --json ../out/pointer-validation.json
+            $code = $LASTEXITCODE
+            Write-Host "pointer validation exit: $code"
+            exit $code
+          }
+          Write-Host "latest.json does not name the candidate: pointer validation skipped"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: validation-${{ matrix.os }}
+          path: out/
+          if-no-files-found: warn
