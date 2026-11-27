@@ -1,0 +1,63 @@
+AI Connect Manager — Catalogue v6 Change Summary (2026-11-27 rev4)
+Updated CSV: ai-model-catalogue-v6-20261127-rev4.csv (32 rows x 66 columns, schema_version=6)
+SHA-256 b796f8396010ee35dec6e897a17111c1d947cca152aacdc9ae186a1bb74add22, 116,250 bytes, ASCII, LF line endings, every field quoted (same encoding as rev3).
+Base: ai-model-catalogue-v6-20261127-rev3.csv (SHA-256 of the supplied file unchanged; not overwritten).
+Reviewed UTC: 2026-11-27T10:45:47Z. Status: prepared for app validation only. Not published, not uploaded, no schedule.
+
+PRESERVED EXACTLY
+- The 66 columns and their order, all 32 entry_id values and their row order, schema_version.
+- Rankings: category_preference_order and recommendation_priority are unchanged in every row, so no ranking changed.
+- row_status, package_completeness, category, license_id, memory_evidence_type and every memory budget/estimate column (required_free_*, estimated_peak_*, recommended_system_ram_gib) are unchanged.
+
+1. COMPONENT PINNING (priority 1)
+- Every required file (62 of 62, across 29 rows) now carries its full 40-character repository commit, exact case-sensitive filename, size_bytes and the publisher's LFS SHA-256.
+- Source: Hugging Face model detail (?blobs=true) at the current commit, cross-checked per file against GET /api/models/{repo}/tree/{commit}. 61 match exactly; 1 (a gated file, since replaced; see 3) could be cross-checked on size only, because the tree hides LFS hashes for gated repositories. No Git blob IDs were used as hashes.
+- required_files_json: revision, filename, size_bytes, sha256 filled; source_url now points at the pinned API record; checked_utc is the actual check time.
+- additional_required_files: rebuilt as /resolve/<full commit>/ URLs. No /resolve/main/ URLs remain. The rev3 convention is kept (companion files only; further shards of the main model are not listed).
+- revision column: set to the variant repository's full commit in all 29 rows with resolved files. The 3 rows with no required files keep an empty revision.
+
+2. CORRECTIONS FROM CURRENT CHECKS (priority 2)
+- Filename case: both gpt-oss-20b rows referenced gpt-oss-20b-mxfp4.gguf; the file is gpt-oss-20b-MXFP4.gguf. Corrected in main_weight_filename, required_files_json and fit_budget_basis.
+- Access: each file was tested with an anonymous HEAD request to /resolve/<commit>/<file>, without following the redirect and without downloading any bytes. 302 means anonymous download is possible; 401 means gated.
+  - 29 rows change to "public" (from 26 "unknown" and 3 "gated": FLUX.2 [klein] 9B, Krea 2 Raw, FLUX.3 Image Klein), because every one of their files downloads anonymously.
+  - FLUX.1-dev changes from "gated" to "public" after the VAE replacement in 3.
+  - FLUX.2-dev (no files) stays "gated". MOSS-Image-SFT and the deprecated Qwen3.8-27B row stay "unknown".
+  - NOTE: "public" is a new value in this column. rev3 only used "unknown" and "gated". If the app's vocabulary differs, map it before import.
+  - Licence obligations are separate from download access: license_id is unchanged, and gated-upstream licence notes in limitations are kept.
+- FLUX.2-dev: rev3 said unsloth/FLUX.2-dev-FP8 is PyTorch .pt only. It also publishes .safetensors (FP8 and INT8, denoiser and text encoder; revision 7264beb0...). Whether stable-diffusion.cpp can load those is unverified, so the row stays research/unknown, with its limitations text corrected.
+- Qwen3.5-122B-A10B: the rev3 note citing "short commit 5e8144e" isn't reproducible. The repository's current and pinned commit is 51eab4d59d53f573fb9206cb3ce613f1d0aa392b, and 5e8144e is not among its recent commits.
+- Qwen3-14B and GPT-OSS 120B: the rev3 "MISC_ERROR" no longer applies. Both resolved fully.
+- FLUX.3 Image Klein: additional_required_files now also lists the VAE, which was already in required_files_json.
+- "...revisions and hashes pending manager resolution" sentences (11 rows) are replaced, because rev4 now records those values. Each replacement states it is a metadata check, not an app-support or local test.
+
+3. PUBLIC ALTERNATIVE DEPENDENCIES (priority 3)
+- FLUX.1-dev Q4_K_S: the VAE moves from the gated black-forest-labs/FLUX.1-dev ae.safetensors to Comfy-Org/Lumina-Image-2 split_files/vae/ae.safetensors at 5b072540ef86570fecb8249c505f23d5bdeb88cd.
+  - Byte identity: same SHA-256 afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38 and 335,304,388 bytes as Black Forest Labs' own file. Anonymous HEAD returns 302.
+  - Provenance and licence basis: BFL publishes the identical file in black-forest-labs/FLUX.1-schnell under Apache-2.0. The mirror's repository licence is not relied on.
+  - Model licence: the FLUX.1-dev denoiser (city96 GGUF derivative) stays under the FLUX.1-dev Non-Commercial licence. license_id is unchanged, and limitations says so.
+- The Z-Image-Turbo Q4_K and Q3_K rows already used the same Comfy-Org VAE in rev3. Their limitations now state the BFL Apache-2.0 licence basis, instead of relying on the mirror's card.
+- FLUX.3 Image Klein: the AtomicChat vae/ae.safetensors is byte-identical (SHA-256 868fe7b3...a343) to ae.safetensors in BFL's gated black-forest-labs/flux-3-image-klein. This is recorded in limitations; FLUX Kommunity licence obligations apply.
+- No other substitution was made.
+
+4. SEPARATION OF CLAIMS (priority 4)
+- Every rev4 change_note ends "Metadata verification only: not app support, runtime compatibility or local testing."
+- package_completeness and row_status were not upgraded anywhere. Download access is recorded only in access_requirements.
+- runtime_version_or_commit and runtime_support_source_url are unchanged. No runtime compatibility was tested.
+
+5. UNRESOLVED ENTRIES (priority 5)
+- Kept as they were: FLUX.2-dev (FP8), MOSS-Image-SFT and the deprecated Qwen3.8-27B row (no files); FLUX.3 Image Klein and Krea 2 Raw (partial). Their files are pinned where they exist, but nothing was invented. See UNRESOLVED-ITEMS-20261127-rev4.txt.
+
+6. MEMORY (priority 6)
+- No budget or estimate column changed. MEMORY-ESTIMATION-REPORT-20261127-rev4.md gives an independent, reproducible comparison, with inputs, method, assumptions and sources.
+- Result: no VRAM budget is below the independent core estimate. Two budgets (Qwen3-4B 4.5 GiB, Qwen3-14B 12.0 GiB) fall below the indicative total but above the core estimate; they are flagged for review, not changed.
+
+7. RANKINGS (priority 7)
+- No ranking changed. The access changes and VAE substitution don't alter any row's suitability ordering, so there was no basis to re-rank.
+
+FILES
+- ai-model-catalogue-v6-20261127-rev4.csv: the release (new immutable name; rev3 untouched)
+- CHANGE-SUMMARY-20261127-rev4.txt: this file
+- UNRESOLVED-ITEMS-20261127-rev4.txt
+- MEMORY-ESTIMATION-REPORT-20261127-rev4.md, plus estimation/ (estimator, configs, script, results)
+- latest.proposed.json: distribution pointer proposal (placeholders marked; not deployable as is)
+- provenance/: resolve_files.py, build_rev4.py, resolved-rev4.json (per-file evidence), changes-rev4.json

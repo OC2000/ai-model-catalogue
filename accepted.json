@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 6,
+  "releaseId": "ai-model-catalogue-v6-20261127-rev4",
+  "file": "releases/ai-model-catalogue-v6-20261127-rev4.csv",
+  "sizeBytes": 116250,
+  "sha256": "b796f8396010ee35dec6e897a17111c1d947cca152aacdc9ae186a1bb74add22",
+  "acceptance": "Passed the app's CsvModelCatalogue parser and hardware-filtering case study (reported 2026-11-27). Catalogue acceptance only: not runtime compatibility, downloads or local inference.",
+  "published": false
+}
