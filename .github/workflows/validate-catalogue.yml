@@ -21,24 +21,16 @@ jobs:
       - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
         with:
           dotnet-version: '10.0.403'
-      - name: Choose candidate and previous release
+      - name: Release gate self-tests (immutable releases, pointer resolution)
+        shell: bash
+        run: python3 tools/ci/test_release_gate.py
+      - name: Plan validations from git history
         shell: bash
         run: |
-          set -euo pipefail
-          base="${GITHUB_BASE_REF:-main}"
-          git fetch -q origin "$base" || true
-          accepted=$(git show "origin/$base:accepted.json" 2>/dev/null | python3 -c 'import json,sys; print(json.load(sys.stdin)["file"])' || python3 -c 'import json; print(json.load(open("accepted.json"))["file"])')
-          candidate=$(ls releases/ai-model-catalogue-v6-*-rev*.csv | sort -V | tail -1)
-          if [ "$candidate" = "$accepted" ]; then
-            previous=$(ls releases/ai-model-catalogue-v6-*-rev*.csv | sort -V | tail -2 | head -1)
-          else
-            previous="$accepted"
-          fi
-          git show "origin/$base:$previous" > previous.csv 2>/dev/null || cp "$previous" previous.csv
-          echo "CANDIDATE=$candidate" >> "$GITHUB_ENV"
-          echo "PREVIOUS=$previous" >> "$GITHUB_ENV"
-          echo "candidate=$candidate previous=$previous"
-      - name: Verify kit, build, smoke test, validate
+          base="origin/${GITHUB_BASE_REF:-main}"
+          git fetch -q origin "${GITHUB_BASE_REF:-main}"
+          python3 tools/ci/release_gate.py --base "$base" --out out || test -f out/plan.json  # errors are enforced in the next step
+      - name: Verify kit, build, smoke test, validate every planned input
         shell: pwsh
         run: |
           pwsh -NoProfile -File ./validator-kit/tools/CsvCatalogue.Validator/Verify-Kit.ps1 -KitRoot validator-kit
@@ -52,18 +44,32 @@ jobs:
           pwsh -NoProfile -File ./tools/CsvCatalogue.Validator/Test-Kit.ps1 -OutputDirectory ../out/synthetic-smoke
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           $dll = "tools/CsvCatalogue.Validator/bin/Release/net10.0/CsvCatalogue.Validator.dll"
-          dotnet $dll --csv "../$env:CANDIDATE" --kind candidate --previous ../previous.csv --json ../out/validation.json
-          $code = $LASTEXITCODE
-          Write-Host "candidate validation exit: $code"
-          if ($code) { exit $code }
-          $m = Get-Content ../latest.json -Raw -ErrorAction SilentlyContinue | ConvertFrom-Json -ErrorAction SilentlyContinue
-          if ($m -and $m.csvUrl.EndsWith("/" + (Split-Path $env:CANDIDATE -Leaf))) {
-            dotnet $dll --csv "../$env:CANDIDATE" --kind candidate --previous ../previous.csv --manifest ../latest.json --json ../out/pointer-validation.json
-            $code = $LASTEXITCODE
-            Write-Host "pointer validation exit: $code"
-            exit $code
+          $plan = Get-Content ../out/plan.json -Raw | ConvertFrom-Json
+          if ($plan.validations.Count -eq 0) { Write-Host "nothing to validate"; exit 1 }
+          $i = 0; $failed = 0; $pointer = $null
+          foreach ($v in $plan.validations) {
+            $i++
+            $cmd = @($dll, "--csv", "../$($v.csv)", "--kind", "candidate", "--json", "../out/validation-$i.json")
+            if ($v.previous) { $cmd += @("--previous", "../$($v.previous)") }
+            if ($v.manifest) { $cmd += @("--manifest", "../$($v.manifest)"); $pointer = $v }
+            dotnet @cmd | Out-Null
+            Write-Host "[$i] $($v.label): exit $LASTEXITCODE"
+            if ($LASTEXITCODE) { $failed++ }
           }
-          Write-Host "latest.json does not name the candidate: pointer validation skipped"
+          if ($pointer) {
+            # Failure cases: a changed invalid pointer, and bytes that differ from the pointer, must be rejected.
+            $m = Get-Content "../$($pointer.manifest)" -Raw | ConvertFrom-Json
+            $m.sha256 = ("f" * 64); $m | ConvertTo-Json | Set-Content ../out/neg-latest.json -NoNewline
+            dotnet $dll --csv "../$($pointer.csv)" --kind candidate --manifest ../out/neg-latest.json --json ../out/neg-1.json | Out-Null
+            $n1 = $LASTEXITCODE; Write-Host "negative: pointer with wrong SHA-256 -> exit $n1 (expected 1)"
+            $b = [IO.File]::ReadAllBytes((Resolve-Path "../$($pointer.csv)")); [IO.File]::WriteAllBytes("$PWD/../out/neg.csv", $b + [byte]10)
+            dotnet $dll --csv ../out/neg.csv --kind candidate --manifest "../$($pointer.manifest)" --json ../out/neg-2.json | Out-Null
+            $n2 = $LASTEXITCODE; Write-Host "negative: CSV bytes differ from pointer -> exit $n2 (expected 1)"
+            if ($n1 -ne 1 -or $n2 -ne 1) { Write-Host "negative cases were not rejected"; $failed++ }
+          }
+          $gate = $plan.errors.Count
+          foreach ($e in $plan.errors) { Write-Host "release gate error: $e" }
+          if ($failed -or $gate) { exit 1 }
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
