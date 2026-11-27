@@ -1,6 +1,8 @@
 # Catalogue update runbook
 
-This runbook is for a catalogue update run, whether manual or scheduled. Every run starts from a fresh clone and works only on a new branch. **A run never pushes directly to `main` and never changes a schedule.** It merges and publishes only through the automatic-release gate below (authorised by the owner on 2026-11-27).
+This runbook is for a catalogue update run, whether manual or scheduled. Every run starts from a fresh clone and works only on a new branch. **A run never pushes directly to `main` and never changes a schedule.** It merges and publishes only through the automatic-release gate below.
+
+> **Temporarily pull requests only (owner decision, 2026-11-27).** The automatic-release gate (rule 12, steps 9-11) is **suspended** until the manager's production validator (`CsvModelCatalogue`) is integrated into this job **and** the capacity policy is agreed. Until then a run opens its release PR and stops: it never merges, never edits `latest.json` and never changes `accepted.json`. Merging and publishing are done by a reviewer. Automatic publishing remains the intended workflow once both conditions are met and the owner re-enables it.
 
 ## Status label (mandatory)
 
@@ -35,7 +37,7 @@ Every pull request and report states its validation status in these words:
 9. **Validation before proposing.** The whole candidate CSV must pass `tools/run_checks.sh` (part A: mirror of the app parser; part B: publisher checks; pin integrity) before a PR is opened.
 10. **Failure preserves the baseline.** If research, validation or network access fails, open no release PR. `accepted.json` and `releases/` stay unchanged. At most, open a report-only PR (`reports/` only) describing the failure, or simply report it.
 11. **Publishing goes through the gate.** `latest.json` is written only by `tools/make_latest.py`, only in step 10 below, with the commit-pinned hosted URL and the real time. It is never edited by hand.
-12. **Automatic-release gate.** A run may merge its own release PR and publish only when **all** of these hold; otherwise it leaves the PR open for review and publishes nothing:
+12. **Automatic-release gate (suspended: see the notice at the top).** A run may merge its own release PR and publish only when **all** of these hold; otherwise it leaves the PR open for review and publishes nothing:
     - `tools/run_checks.sh` passed on the new CSV (exit 0), and the baseline check passed at the start of the run;
     - every existing row is unchanged, except for rows explicitly superseded (old row kept; new row with `supersedes_entry_id`) and corrections to factually stale text;
     - no existing rank changed; new rows are only appended;
@@ -49,7 +51,7 @@ Every pull request and report states its validation status in these words:
    - If pin integrity fails, stop and report.
    - Note any `changed-upstream` or `removed-upstream` files.
 3. Run `tools/discover.py <accepted file> --days 21 --out reports/<date>-revN/leads.json` (exit 3 = Hub unreachable: stop, baseline kept). Then research the leads, using primary sources only (publisher model cards and repositories, runtime documentation). Leads, news and community lists are never evidence.
-   - Prioritise: newer versions of families already in the catalogue (`possible_newer_version_of`), then new releases from watched publishers, then abliterated/uncensored variants (included on request; they need an identifiable publisher, a licence that follows the original model, and the same pinning rules), then trending repositories.
+   - Prioritise: newer versions of families already in the catalogue (`possible_newer_version_of`), then new releases from watched publishers, then abliterated/uncensored variants (always researched and included, owner decision 2026-11-27; they need an identifiable publisher, a licence that follows the original model, and the same pinning rules), then trending repositories.
    - A newer version is added as a **new row** at the end of its category. It never silently replaces the older model; whether to deprecate or re-rank the older one is a ranking proposal.
 4. For each candidate:
    - Pin its files with `tools/resolve_candidate.py`.
@@ -60,6 +62,6 @@ Every pull request and report states its validation status in these words:
 6. Run `tools/run_checks.sh <new file> reports/<date>-revN`. Everything must pass. Then write `releases/notes/revN/` with a change summary, unresolved items and a memory report.
 7. If nothing changed, open no release PR; report "no changes".
 8. Otherwise commit, push the branch, and open a PR using the template, labelled **publisher checks passed; app validation pending**.
-9. If the automatic-release gate (rule 12) holds, merge the PR through the API (never a direct push). Otherwise stop here; the PR waits for review.
+9. **(Suspended: see the notice at the top.)** If the automatic-release gate (rule 12) holds, merge the PR through the API (never a direct push). Otherwise stop here; the PR waits for review.
 10. Publish: on a branch `publish/YYYYMMDD-revN`, run `tools/make_latest.py releases/<new>.csv --url https://raw.githubusercontent.com/OC2000/ai-model-catalogue/<merge commit>/releases/<new>.csv --out latest.json`, set `accepted.json` to the new release (`acceptance`: "publisher checks passed; app validation pending", `published`: true, `publishedUtc` from latest.json), open a PR and merge it.
 11. Verify: fetch `https://raw.githubusercontent.com/OC2000/ai-model-catalogue/main/latest.json` (allow up to 5 minutes' cache), then the CSV it names, and confirm size and SHA-256. If this fails, report it prominently; the app keeps its previous catalogue.
