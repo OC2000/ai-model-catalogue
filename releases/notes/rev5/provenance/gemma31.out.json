@@ -1,0 +1,30 @@
+{
+ "required_files_json": [
+  {
+   "slot": "main_model",
+   "repository_url": "https://huggingface.co/ggml-org/gemma-4-31B-it-GGUF",
+   "revision": "f39d380138390ea246513ff0f087352f3cfc3a1b",
+   "filename": "gemma-4-31B-it-Q4_0.gguf",
+   "size_bytes": 17992313088,
+   "sha256": "031dc1c5fa9c5a0abbf3c39c5173fb2af65f5ac2dc2a090268561d3c72dcd834",
+   "shard_index": 1,
+   "shard_count": 1,
+   "source_url": "https://huggingface.co/api/models/ggml-org/gemma-4-31B-it-GGUF/revision/f39d380138390ea246513ff0f087352f3cfc3a1b",
+   "checked_utc": "2026-11-27T11:28:51Z"
+  }
+ ],
+ "_evidence": [
+  {
+   "filename": "gemma-4-31B-it-Q4_0.gguf",
+   "crossCheck": "detail == tree",
+   "gated": false,
+   "license": "apache-2.0",
+   "licenseName": null,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/17992313088"
+   }
+  }
+ ]
+}

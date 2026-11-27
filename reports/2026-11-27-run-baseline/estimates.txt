@@ -1,0 +1,32 @@
+z-image-turbo_q4_k_light_image_generation_sd budget   8.0 | GPU weights   3.91 / host  2.33      | weights-only floor within budget (activations not modelled)
+z-image-turbo_q3_k_light_image_generation_sd budget   4.8 | GPU weights   3.24 / host  2.33      | weights-only floor within budget (activations not modelled)
+flux-2-klein-4b_q4_k_m_light_image_generatio budget   8.5 | GPU weights   2.74 / host  2.33      | weights-only floor within budget (activations not modelled)
+flux-3-image-klein_unresolved_light_image_ge budget     - | GPU weights   3.97 / host  0.00      | weights only; no dedicated-VRAM budget to compare
+sdxl-turbo_fp16_light_image_generation_sdcpp budget   9.5 | GPU weights   6.46 / host  0.00      | weights-only floor within budget (activations not modelled)
+qwen-image-2.1_q4_k_heavy_image_generation_s budget  16.5 | GPU weights   4.54 / host  4.80      | weights-only floor within budget (activations not modelled)
+flux-2-klein-9b_q4_k_m_heavy_image_generatio budget  12.5 | GPU weights   5.60 / host  4.68      | weights-only floor within budget (activations not modelled)
+qwen-image-2.1-turbo_unresolved_heavy_image_ budget  16.0 | GPU weights   4.27 / host  4.80      | weights-only floor within budget (activations not modelled)
+krea-2-raw_q4_k_m_heavy_image_generation_sdc budget  15.5 | GPU weights   6.76 / host  0.00      | weights-only floor within budget (activations not modelled)
+flux-1-dev_q4_k_s_heavy_image_generation_sdc budget  14.5 | GPU weights   6.65 / host  9.34      | weights-only floor within budget (activations not modelled)
+flux-2-dev_fp8_heavy_image_generation_sdcpp_ budget     - | -                                    | not estimated: no resolved files
+moss-image-sft_unresolved_heavy_image_genera budget     - | -                                    | not estimated: no resolved files
+qwen3.5-9b_ud_q4_k_xl_light_text_llamacpp_wi budget   8.5 | core   6.11 / total   7.58           | budget covers estimate
+qwen3-8b_q4_k_m_light_text_llamacpp_win_cuda budget   7.7 | core   5.81 / total   7.10           | budget covers estimate
+qwen3-4b_q4_k_m_light_text_llamacpp_win_cuda budget   4.5 | core   3.45 / total   4.74           | budget within estimate range
+qwen2.5-7b-instruct_q4_k_m_light_text_llamac budget   7.5 | core   4.80 / total   6.09           | budget covers estimate
+qwen3.5-122b-a10b_ud_q4_k_xl_heavy_text_32k_ budget  86.0 | core  72.64 / total  74.11           | budget covers estimate
+gpt-oss-120b_mxfp4_heavy_text_32k_llamacpp_w budget  72.0 | core  60.16 / total  61.55           | budget covers estimate
+qwen3-32b_q4_k_m_heavy_text_32k_llamacpp_win budget  29.5 | core  26.40 / total  27.69           | budget covers estimate
+qwen3.8-27b_ud_q4_k_xl_heavy_text_8k_llamacp budget  20.5 | core  17.09 / total  18.57           | budget covers estimate
+qwen3-30b-a3b_q4_k_m_heavy_text_8k_llamacpp_ budget  22.5 | core  18.03 / total  19.32           | budget covers estimate
+gpt-oss-20b_mxfp4_heavy_text_128k_llamacpp_w budget  23.0 | core  14.28 / total  15.66           | budget covers estimate
+qwen3-32b_q4_k_m_heavy_text_8k_llamacpp_win_ budget  23.5 | core  20.40 / total  21.69           | budget covers estimate
+gpt-oss-20b_mxfp4_heavy_text_8k_llamacpp_win budget  15.8 | core  11.47 / total  12.85           | budget covers estimate
+gemma-4-26b-a4b-it_q4_0_heavy_text_8k_llamac budget  15.8 | core  13.97 / total  15.47           | budget covers estimate
+qwen3-14b_q4_k_m_heavy_text_16k_llamacpp_win budget  12.0 | core  10.88 / total  12.17           | budget within estimate range
+gemma-4-12b-it_q4_k_m_heavy_text_32k_llamacp budget  12.5 | core   7.95 / total   9.45           | budget covers estimate
+kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_l budget  16.0 | -                                    | not estimated: MLA attention (kv_lora_rank) unsupported by vram_estimate.py v0.2
+kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_l budget     - | -                                    | not estimated: MLA attention (kv_lora_rank) unsupported by vram_estimate.py v0.2
+qwen3.8-27b_unresolved_heavy_text_8k_llamacp budget     - | -                                    | not estimated: no resolved files
+whisper-large-v3-turbo_q5_0_transcription_wh budget   2.5 | GPU weights   0.53 / host  0.00      | weights-only floor within budget (activations not modelled)
+whisper-base-en_f16_transcription_whispercpp budget     - | GPU weights   0.14 / host  0.00      | weights only; no dedicated-VRAM budget to compare

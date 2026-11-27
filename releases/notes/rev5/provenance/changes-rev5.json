@@ -1,0 +1,44 @@
+[
+ {
+  "entry_id": "qwen3.5-122b-a10b_ud_q4_k_xl_heavy_text_32k_llamacpp_win_cuda",
+  "change": "limitations text corrected",
+  "old": "immutable revision, exact byte sizes, SHA-256, and live HTTP check remain unverified",
+  "new": "files pinned to an immutable commit with exact byte size and publisher SHA-256; anonymous download verified by bounded request (2026-11-27)"
+ },
+ {
+  "entry_id": "gpt-oss-120b_mxfp4_heavy_text_32k_llamacpp_win_cuda",
+  "change": "limitations text corrected",
+  "old": "exact byte size, SHA-256, and live HTTP HEAD check remain unverified",
+  "new": "files pinned to an immutable commit with exact byte size and publisher SHA-256; anonymous download verified by bounded request (2026-11-27)"
+ },
+ {
+  "entry_id": "qwen3-14b_q4_k_m_heavy_text_16k_llamacpp_win_cuda",
+  "change": "limitations text corrected",
+  "old": "immutable revision, exact byte size, SHA-256, and live HTTP HEAD check remain unverified",
+  "new": "files pinned to an immutable commit with exact byte size and publisher SHA-256; anonymous download verified by bounded request (2026-11-27)"
+ },
+ {
+  "entry_id": "nemotron-3.5-bolt-e4b_q4_k_m_light_text_8k_llamacpp_win_cuda",
+  "change": "new research row",
+  "rank": "5",
+  "category": "light_text"
+ },
+ {
+  "entry_id": "gemma-4-31b-it_q4_0_heavy_text_8k_llamacpp_win_cuda",
+  "change": "new research row",
+  "rank": "15",
+  "category": "heavy_text"
+ },
+ {
+  "entry_id": "qwen3.6-35b-a3b_q4_k_m_heavy_text_8k_llamacpp_win_cuda",
+  "change": "new research row",
+  "rank": "16",
+  "category": "heavy_text"
+ },
+ {
+  "entry_id": "inkling-2-mini_iq4_nl_heavy_text_llamacpp_win_cuda",
+  "change": "new research row",
+  "rank": "17",
+  "category": "heavy_text"
+ }
+]

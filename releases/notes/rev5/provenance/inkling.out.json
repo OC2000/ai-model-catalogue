@@ -1,0 +1,30 @@
+{
+ "required_files_json": [
+  {
+   "slot": "main_model",
+   "repository_url": "https://huggingface.co/ggml-org/Inkling-2-Mini-GGUF",
+   "revision": "0bdc580634ceac4c4d921f452777bf44228de9af",
+   "filename": "Inkling-2-Mini-IQ4_NL.gguf",
+   "size_bytes": 17627940768,
+   "sha256": "cbdf3fa9dc50a4124977980f37da4f1fa764b0cfe800d275cd43d26ce2a81af4",
+   "shard_index": 1,
+   "shard_count": 1,
+   "source_url": "https://huggingface.co/api/models/ggml-org/Inkling-2-Mini-GGUF/revision/0bdc580634ceac4c4d921f452777bf44228de9af",
+   "checked_utc": "2026-11-27T11:28:49Z"
+  }
+ ],
+ "_evidence": [
+  {
+   "filename": "Inkling-2-Mini-IQ4_NL.gguf",
+   "crossCheck": "detail == tree",
+   "gated": false,
+   "license": null,
+   "licenseName": null,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/17627940768"
+   }
+  }
+ ]
+}

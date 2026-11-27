@@ -1,0 +1,1273 @@
+{
+ "summary": {
+  "file": "releases/ai-model-catalogue-v6-20261127-rev5.csv",
+  "components": 66,
+  "checkedUtc": "2026-11-27T11:31:29Z",
+  "pin": {
+   "ok": 66
+  },
+  "drift": {
+   "same-commit": 66
+  },
+  "access": {
+   "verified": 66
+  },
+  "integrity": "ok"
+ },
+ "components": [
+  {
+   "entry_id": "z-image-turbo_q4_k_light_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/leejet/Z-Image-Turbo-GGUF",
+   "filename": "z_image_turbo-Q4_K.gguf",
+   "revision": "c61c0e422dc8b541b7548cf33a4ef8302b0f8085",
+   "size_bytes": 3864250304,
+   "sha256": "14b375ab4f226bc5378f68f37e899ef3c2242b8541e61e2bc1aff40976086fbd",
+   "checkedUtc": "2026-11-27T11:30:59Z",
+   "pin": "ok",
+   "headRevision": "c61c0e422dc8b541b7548cf33a4ef8302b0f8085",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/3864250304"
+   }
+  },
+  {
+   "entry_id": "z-image-turbo_q4_k_light_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/Comfy-Org/Lumina-Image-2",
+   "filename": "split_files/vae/ae.safetensors",
+   "revision": "5b072540ef86570fecb8249c505f23d5bdeb88cd",
+   "size_bytes": 335304388,
+   "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+   "checkedUtc": "2026-11-27T11:31:01Z",
+   "pin": "ok",
+   "headRevision": "5b072540ef86570fecb8249c505f23d5bdeb88cd",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/335304388"
+   }
+  },
+  {
+   "entry_id": "z-image-turbo_q4_k_light_image_generation_sdcpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/Qwen/Qwen3-4B-GGUF",
+   "filename": "Qwen3-4B-Q4_K_M.gguf",
+   "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "size_bytes": 2497280256,
+   "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+   "checkedUtc": "2026-11-27T11:31:01Z",
+   "pin": "ok",
+   "headRevision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/2497280256"
+   }
+  },
+  {
+   "entry_id": "z-image-turbo_q3_k_light_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/leejet/Z-Image-Turbo-GGUF",
+   "filename": "z_image_turbo-Q3_K.gguf",
+   "revision": "c61c0e422dc8b541b7548cf33a4ef8302b0f8085",
+   "size_bytes": 3143559104,
+   "sha256": "4b44bdaa7814f20d7cf144e3939bd93aa32f50660204dd0c2aea5c5376232980",
+   "checkedUtc": "2026-11-27T11:31:02Z",
+   "pin": "ok",
+   "headRevision": "c61c0e422dc8b541b7548cf33a4ef8302b0f8085",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/3143559104"
+   }
+  },
+  {
+   "entry_id": "z-image-turbo_q3_k_light_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/Comfy-Org/Lumina-Image-2",
+   "filename": "split_files/vae/ae.safetensors",
+   "revision": "5b072540ef86570fecb8249c505f23d5bdeb88cd",
+   "size_bytes": 335304388,
+   "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+   "checkedUtc": "2026-11-27T11:31:02Z",
+   "pin": "ok",
+   "headRevision": "5b072540ef86570fecb8249c505f23d5bdeb88cd",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/335304388"
+   }
+  },
+  {
+   "entry_id": "z-image-turbo_q3_k_light_image_generation_sdcpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/Qwen/Qwen3-4B-GGUF",
+   "filename": "Qwen3-4B-Q4_K_M.gguf",
+   "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "size_bytes": 2497280256,
+   "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+   "checkedUtc": "2026-11-27T11:31:02Z",
+   "pin": "ok",
+   "headRevision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/2497280256"
+   }
+  },
+  {
+   "entry_id": "flux-2-klein-4b_q4_k_m_light_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/FLUX.2-klein-4B-GGUF",
+   "filename": "flux-2-klein-4b-Q4_K_M.gguf",
+   "revision": "a09d5bb51ac4000ccd9643d10e9db3ed14200508",
+   "size_bytes": 2604311104,
+   "sha256": "0b25d143c8469b342bc5af3bce92b783bf6b0636d285f7b2f75e38af63af9a15",
+   "checkedUtc": "2026-11-27T11:31:02Z",
+   "pin": "ok",
+   "headRevision": "a09d5bb51ac4000ccd9643d10e9db3ed14200508",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/2604311104"
+   }
+  },
+  {
+   "entry_id": "flux-2-klein-4b_q4_k_m_light_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/Qwen/Qwen3-4B-GGUF",
+   "filename": "Qwen3-4B-Q4_K_M.gguf",
+   "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "size_bytes": 2497280256,
+   "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+   "checkedUtc": "2026-11-27T11:31:03Z",
+   "pin": "ok",
+   "headRevision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/2497280256"
+   }
+  },
+  {
+   "entry_id": "flux-2-klein-4b_q4_k_m_light_image_generation_sdcpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/Comfy-Org/Flux-2-Klein-9B",
+   "filename": "split_files/vae/flux2-vae.safetensors",
+   "revision": "1138ce884c8e977cdacacbe779784fec4426bb3f",
+   "size_bytes": 336211292,
+   "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+   "checkedUtc": "2026-11-27T11:31:03Z",
+   "pin": "ok",
+   "headRevision": "1138ce884c8e977cdacacbe779784fec4426bb3f",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/336211292"
+   }
+  },
+  {
+   "entry_id": "flux-3-image-klein_unresolved_light_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/flux-3-image-klein-GGUF",
+   "filename": "flux-3-image-klein-UD-Q4_K_XL.gguf",
+   "revision": "12ef13ce920d53f45fe805093910c899668b9e76",
+   "size_bytes": 3929944992,
+   "sha256": "0a057e07550a5b2169e344d686171a7dd3c7d82c7d8d1d1605d8d881c16e9fa7",
+   "checkedUtc": "2026-11-27T11:31:04Z",
+   "pin": "ok",
+   "headRevision": "12ef13ce920d53f45fe805093910c899668b9e76",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/3929944992"
+   }
+  },
+  {
+   "entry_id": "flux-3-image-klein_unresolved_light_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/AtomicChat/FLUX-3-Image-Klein-GGUF",
+   "filename": "vae/ae.safetensors",
+   "revision": "b88bc03edf40e24846eaf7270b2ba9c2a9a1637f",
+   "size_bytes": 336211292,
+   "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+   "checkedUtc": "2026-11-27T11:31:04Z",
+   "pin": "ok",
+   "headRevision": "b88bc03edf40e24846eaf7270b2ba9c2a9a1637f",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/336211292"
+   }
+  },
+  {
+   "entry_id": "sdxl-turbo_fp16_light_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/stabilityai/sdxl-turbo",
+   "filename": "sd_xl_turbo_1.0_fp16.safetensors",
+   "revision": "71153311d3dbb46851df1931d3ca6e939de83304",
+   "size_bytes": 6938081905,
+   "sha256": "e869ac7d6942cb327d68d5ed83a40447aadf20e0c3358d98b2cc9e270db0da26",
+   "checkedUtc": "2026-11-27T11:31:05Z",
+   "pin": "ok",
+   "headRevision": "71153311d3dbb46851df1931d3ca6e939de83304",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/6938081905"
+   }
+  },
+  {
+   "entry_id": "qwen-image-2.1_q4_k_heavy_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/leejet/Qwen-Image-2.1-GGUF",
+   "filename": "qwen_image_2.1-Q4_K.gguf",
+   "revision": "0bca76da6edd8a18211e9717454615c1bbaaf6ed",
+   "size_bytes": 4197494816,
+   "sha256": "29f9c83c249ff0292fb2943fceddfa2319b446601866c82a4f8be062abea72c2",
+   "checkedUtc": "2026-11-27T11:31:06Z",
+   "pin": "ok",
+   "headRevision": "0bca76da6edd8a18211e9717454615c1bbaaf6ed",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/4197494816"
+   }
+  },
+  {
+   "entry_id": "qwen-image-2.1_q4_k_heavy_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/unsloth/Qwen-Image-2.1-FP8",
+   "filename": "vae/qwen_image_2.1_vae_bf16.safetensors",
+   "revision": "bb21a8ba7f0371c19ad1f72c82a5e8fc10f39939",
+   "size_bytes": 675508656,
+   "sha256": "71879ffd5321e6d10c3c87513e2b474b1252efa7f3dec2969214a9bf06a6dd5c",
+   "checkedUtc": "2026-11-27T11:31:06Z",
+   "pin": "ok",
+   "headRevision": "bb21a8ba7f0371c19ad1f72c82a5e8fc10f39939",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/675508656"
+   }
+  },
+  {
+   "entry_id": "qwen-image-2.1_q4_k_heavy_image_generation_sdcpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF",
+   "filename": "Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf",
+   "revision": "b93a7ee713758252c555be4210c00540df954dc2",
+   "size_bytes": 5148699488,
+   "sha256": "e3d1a6e87c5cb31e054f2c3bc0dd82ffde052f613de5eef3665b7bd33c9b703e",
+   "checkedUtc": "2026-11-27T11:31:07Z",
+   "pin": "ok",
+   "headRevision": "b93a7ee713758252c555be4210c00540df954dc2",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/5148699488"
+   }
+  },
+  {
+   "entry_id": "flux-2-klein-9b_q4_k_m_heavy_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/FLUX.2-klein-9B-GGUF",
+   "filename": "flux-2-klein-9b-Q4_K_M.gguf",
+   "revision": "6db9b2d0479c98795589c94c9beef5cc818c6966",
+   "size_bytes": 5673900320,
+   "sha256": "23cadc53168a1b9c607a79d2b8cf942deeb0b48dcdb6024bf757360c7a746c19",
+   "checkedUtc": "2026-11-27T11:31:07Z",
+   "pin": "ok",
+   "headRevision": "6db9b2d0479c98795589c94c9beef5cc818c6966",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/5673900320"
+   }
+  },
+  {
+   "entry_id": "flux-2-klein-9b_q4_k_m_heavy_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/Qwen/Qwen3-8B-GGUF",
+   "filename": "Qwen3-8B-Q4_K_M.gguf",
+   "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+   "size_bytes": 5027783488,
+   "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+   "checkedUtc": "2026-11-27T11:31:08Z",
+   "pin": "ok",
+   "headRevision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/5027783488"
+   }
+  },
+  {
+   "entry_id": "flux-2-klein-9b_q4_k_m_heavy_image_generation_sdcpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/Comfy-Org/Flux-2-Klein-9B",
+   "filename": "split_files/vae/flux2-vae.safetensors",
+   "revision": "1138ce884c8e977cdacacbe779784fec4426bb3f",
+   "size_bytes": 336211292,
+   "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+   "checkedUtc": "2026-11-27T11:31:08Z",
+   "pin": "ok",
+   "headRevision": "1138ce884c8e977cdacacbe779784fec4426bb3f",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/336211292"
+   }
+  },
+  {
+   "entry_id": "qwen-image-2.1-turbo_unresolved_heavy_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/Qwen-Image-2.1-Turbo-GGUF",
+   "filename": "qwen-image-2.1-turbo-Q4_K_S.gguf",
+   "revision": "bd53e520a64472adaff780da0b2f2d7eb1605e30",
+   "size_bytes": 3906357056,
+   "sha256": "2a8e536a9e615d1407a82a600d1e695f34acbe36c7c169fb4be7eb0ecfa56cbe",
+   "checkedUtc": "2026-11-27T11:31:09Z",
+   "pin": "ok",
+   "headRevision": "bd53e520a64472adaff780da0b2f2d7eb1605e30",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/3906357056"
+   }
+  },
+  {
+   "entry_id": "qwen-image-2.1-turbo_unresolved_heavy_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/unsloth/Qwen-Image-2.1-FP8",
+   "filename": "vae/qwen_image_2.1_vae_bf16.safetensors",
+   "revision": "bb21a8ba7f0371c19ad1f72c82a5e8fc10f39939",
+   "size_bytes": 675508656,
+   "sha256": "71879ffd5321e6d10c3c87513e2b474b1252efa7f3dec2969214a9bf06a6dd5c",
+   "checkedUtc": "2026-11-27T11:31:09Z",
+   "pin": "ok",
+   "headRevision": "bb21a8ba7f0371c19ad1f72c82a5e8fc10f39939",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/675508656"
+   }
+  },
+  {
+   "entry_id": "qwen-image-2.1-turbo_unresolved_heavy_image_generation_sdcpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF",
+   "filename": "Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf",
+   "revision": "b93a7ee713758252c555be4210c00540df954dc2",
+   "size_bytes": 5148699488,
+   "sha256": "e3d1a6e87c5cb31e054f2c3bc0dd82ffde052f613de5eef3665b7bd33c9b703e",
+   "checkedUtc": "2026-11-27T11:31:10Z",
+   "pin": "ok",
+   "headRevision": "b93a7ee713758252c555be4210c00540df954dc2",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/5148699488"
+   }
+  },
+  {
+   "entry_id": "krea-2-raw_q4_k_m_heavy_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/realrebelai/KREA-2_GGUFs",
+   "filename": "BASE/Krea-2-Base-Q4_K_M.gguf",
+   "revision": "9721c3ec932c43dff6dbb5793a816d9ad105277f",
+   "size_bytes": 7259460832,
+   "sha256": "f52b99ec56380db4ea05614a2299b9420e04b1214fcfb5151059cc569bdf5b9e",
+   "checkedUtc": "2026-11-27T11:31:10Z",
+   "pin": "ok",
+   "headRevision": "9721c3ec932c43dff6dbb5793a816d9ad105277f",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/7259460832"
+   }
+  },
+  {
+   "entry_id": "flux-1-dev_q4_k_s_heavy_image_generation_sdcpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/city96/FLUX.1-dev-gguf",
+   "filename": "flux1-dev-Q4_K_S.gguf",
+   "revision": "3c60ac659f4b1f2ab3ca8bd4488272069b36a148",
+   "size_bytes": 6805988640,
+   "sha256": "75bb19459b5240c9f373b5af527584af15b675867fa142efadf7478d6abbf62b",
+   "checkedUtc": "2026-11-27T11:31:10Z",
+   "pin": "ok",
+   "headRevision": "3c60ac659f4b1f2ab3ca8bd4488272069b36a148",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/6805988640"
+   }
+  },
+  {
+   "entry_id": "flux-1-dev_q4_k_s_heavy_image_generation_sdcpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/Comfy-Org/Lumina-Image-2",
+   "filename": "split_files/vae/ae.safetensors",
+   "revision": "5b072540ef86570fecb8249c505f23d5bdeb88cd",
+   "size_bytes": 335304388,
+   "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+   "checkedUtc": "2026-11-27T11:31:11Z",
+   "pin": "ok",
+   "headRevision": "5b072540ef86570fecb8249c505f23d5bdeb88cd",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/335304388"
+   }
+  },
+  {
+   "entry_id": "flux-1-dev_q4_k_s_heavy_image_generation_sdcpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/comfyanonymous/flux_text_encoders",
+   "filename": "clip_l.safetensors",
+   "revision": "6af2a98e3f615bdfa612fbd85da93d1ed5f69ef5",
+   "size_bytes": 246144152,
+   "sha256": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd",
+   "checkedUtc": "2026-11-27T11:31:11Z",
+   "pin": "ok",
+   "headRevision": "6af2a98e3f615bdfa612fbd85da93d1ed5f69ef5",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/246144152"
+   }
+  },
+  {
+   "entry_id": "flux-1-dev_q4_k_s_heavy_image_generation_sdcpp_win_cuda",
+   "index": 3,
+   "repository": "https://huggingface.co/comfyanonymous/flux_text_encoders",
+   "filename": "t5xxl_fp16.safetensors",
+   "revision": "6af2a98e3f615bdfa612fbd85da93d1ed5f69ef5",
+   "size_bytes": 9787841024,
+   "sha256": "6e480b09fae049a72d2a8c5fbccb8d3e92febeb233bbe9dfe7256958a9167635",
+   "checkedUtc": "2026-11-27T11:31:12Z",
+   "pin": "ok",
+   "headRevision": "6af2a98e3f615bdfa612fbd85da93d1ed5f69ef5",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/9787841024"
+   }
+  },
+  {
+   "entry_id": "qwen3.5-9b_ud_q4_k_xl_light_text_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF",
+   "filename": "Qwen3.5-9B-UD-Q4_K_XL.gguf",
+   "revision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+   "size_bytes": 5966095584,
+   "sha256": "6f5d30666c2d8ae16a306e616d95341dcf3cc46810df84d7e6f5a7d1e4c1b293",
+   "checkedUtc": "2026-11-27T11:31:12Z",
+   "pin": "ok",
+   "headRevision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/5966095584"
+   }
+  },
+  {
+   "entry_id": "qwen3-8b_q4_k_m_light_text_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/Qwen/Qwen3-8B-GGUF",
+   "filename": "Qwen3-8B-Q4_K_M.gguf",
+   "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+   "size_bytes": 5027783488,
+   "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+   "checkedUtc": "2026-11-27T11:31:13Z",
+   "pin": "ok",
+   "headRevision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/5027783488"
+   }
+  },
+  {
+   "entry_id": "qwen3-4b_q4_k_m_light_text_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/Qwen/Qwen3-4B-GGUF",
+   "filename": "Qwen3-4B-Q4_K_M.gguf",
+   "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "size_bytes": 2497280256,
+   "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+   "checkedUtc": "2026-11-27T11:31:13Z",
+   "pin": "ok",
+   "headRevision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/2497280256"
+   }
+  },
+  {
+   "entry_id": "qwen2.5-7b-instruct_q4_k_m_light_text_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF",
+   "filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+   "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+   "size_bytes": 3993201344,
+   "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db",
+   "checkedUtc": "2026-11-27T11:31:13Z",
+   "pin": "ok",
+   "headRevision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/3993201344"
+   }
+  },
+  {
+   "entry_id": "qwen2.5-7b-instruct_q4_k_m_light_text_llamacpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF",
+   "filename": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+   "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+   "size_bytes": 689872288,
+   "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a",
+   "checkedUtc": "2026-11-27T11:31:14Z",
+   "pin": "ok",
+   "headRevision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/689872288"
+   }
+  },
+  {
+   "entry_id": "nemotron-3.5-bolt-e4b_q4_k_m_light_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+   "filename": "Nemotron-3.5-Bolt-E4B-Q4_K_M.gguf",
+   "revision": "0e5d71fc20036486786f71befa103d23a97b79b1",
+   "size_bytes": 6180446208,
+   "sha256": "c8af2b8aea10a690a1d9491db744a9446660173cb38fc489612b556615a69612",
+   "checkedUtc": "2026-11-27T11:31:14Z",
+   "pin": "ok",
+   "headRevision": "0e5d71fc20036486786f71befa103d23a97b79b1",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/6180446208"
+   }
+  },
+  {
+   "entry_id": "qwen3.5-122b-a10b_ud_q4_k_xl_heavy_text_32k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF",
+   "filename": "UD-Q4_K_XL/Qwen3.5-122B-A10B-UD-Q4_K_XL-00001-of-00003.gguf",
+   "revision": "51eab4d59d53f573fb9206cb3ce613f1d0aa392b",
+   "size_bytes": 10943552,
+   "sha256": "467c9bd92ea518539cf75bf5a5fbfbd35e9a0b40d766ccaa67bf120e12041df3",
+   "checkedUtc": "2026-11-27T11:31:15Z",
+   "pin": "ok",
+   "headRevision": "51eab4d59d53f573fb9206cb3ce613f1d0aa392b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/10943552"
+   }
+  },
+  {
+   "entry_id": "qwen3.5-122b-a10b_ud_q4_k_xl_heavy_text_32k_llamacpp_win_cuda",
+   "index": 1,
+   "repository": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF",
+   "filename": "UD-Q4_K_XL/Qwen3.5-122B-A10B-UD-Q4_K_XL-00002-of-00003.gguf",
+   "revision": "51eab4d59d53f573fb9206cb3ce613f1d0aa392b",
+   "size_bytes": 49640779424,
+   "sha256": "ecdbd42d43b0df9fa0ef9a584e09e95a43966ef03a122aba0b87a99d44d9ad98",
+   "checkedUtc": "2026-11-27T11:31:15Z",
+   "pin": "ok",
+   "headRevision": "51eab4d59d53f573fb9206cb3ce613f1d0aa392b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49640779424"
+   }
+  },
+  {
+   "entry_id": "qwen3.5-122b-a10b_ud_q4_k_xl_heavy_text_32k_llamacpp_win_cuda",
+   "index": 2,
+   "repository": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF",
+   "filename": "UD-Q4_K_XL/Qwen3.5-122B-A10B-UD-Q4_K_XL-00003-of-00003.gguf",
+   "revision": "51eab4d59d53f573fb9206cb3ce613f1d0aa392b",
+   "size_bytes": 27378273056,
+   "sha256": "13300e0f059e6fa21aa0fabde2a554f9deea366c0e54f268045769b214b28c97",
+   "checkedUtc": "2026-11-27T11:31:16Z",
+   "pin": "ok",
+   "headRevision": "51eab4d59d53f573fb9206cb3ce613f1d0aa392b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/27378273056"
+   }
+  },
+  {
+   "entry_id": "gpt-oss-120b_mxfp4_heavy_text_32k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggml-org/gpt-oss-120b-GGUF",
+   "filename": "gpt-oss-120b-MXFP4.gguf",
+   "revision": "f59990363fbbb67f01bce03e5e7bf0929e3e320b",
+   "size_bytes": 63387346208,
+   "sha256": "582bd40f6886200101f4c4ed9f25f3fe80cc14c86e9e2b37746cd8904a0c622d",
+   "checkedUtc": "2026-11-27T11:31:16Z",
+   "pin": "ok",
+   "headRevision": "f59990363fbbb67f01bce03e5e7bf0929e3e320b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/63387346208"
+   }
+  },
+  {
+   "entry_id": "qwen3-32b_q4_k_m_heavy_text_32k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/Qwen/Qwen3-32B-GGUF",
+   "filename": "Qwen3-32B-Q4_K_M.gguf",
+   "revision": "938a7432affaec9157f883a87164e2646ae17555",
+   "size_bytes": 19762149024,
+   "sha256": "efd971561896866f0e910cce52761ca77b1b138090c7f15fe284676d57d1f689",
+   "checkedUtc": "2026-11-27T11:31:17Z",
+   "pin": "ok",
+   "headRevision": "938a7432affaec9157f883a87164e2646ae17555",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/19762149024"
+   }
+  },
+  {
+   "entry_id": "qwen3.8-27b_ud_q4_k_xl_heavy_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+   "filename": "Qwen3.8-27B-UD-Q4_K_XL.gguf",
+   "revision": "4af51b3542f775b0a8e4b310bfb3f17e01c306c9",
+   "size_bytes": 17659407264,
+   "sha256": "2a5f3565f39cf885103da591182c1266da64745737b42b452fd3e675369f1211",
+   "checkedUtc": "2026-11-27T11:31:17Z",
+   "pin": "ok",
+   "headRevision": "4af51b3542f775b0a8e4b310bfb3f17e01c306c9",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/17659407264"
+   }
+  },
+  {
+   "entry_id": "qwen3-30b-a3b_q4_k_m_heavy_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/Qwen/Qwen3-30B-A3B-GGUF",
+   "filename": "Qwen3-30B-A3B-Q4_K_M.gguf",
+   "revision": "e4d4bafdfb96a411a163846265362aceb0b9c63a",
+   "size_bytes": 18556685824,
+   "sha256": "0d003f6662faee786ed5da3e31b29c978de5ae5d275c8794c606a7f3c01aa8f5",
+   "checkedUtc": "2026-11-27T11:31:18Z",
+   "pin": "ok",
+   "headRevision": "e4d4bafdfb96a411a163846265362aceb0b9c63a",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/18556685824"
+   }
+  },
+  {
+   "entry_id": "gpt-oss-20b_mxfp4_heavy_text_128k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggml-org/gpt-oss-20b-GGUF",
+   "filename": "gpt-oss-20b-MXFP4.gguf",
+   "revision": "41e8a94d15d62070b36cf4553a0250717ecf46b8",
+   "size_bytes": 12109566624,
+   "sha256": "27cd6c432c7672cb812a92f611cf3ba7bbc35928262bb1e1253ff4ee6ae35901",
+   "checkedUtc": "2026-11-27T11:31:18Z",
+   "pin": "ok",
+   "headRevision": "41e8a94d15d62070b36cf4553a0250717ecf46b8",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/12109566624"
+   }
+  },
+  {
+   "entry_id": "qwen3-32b_q4_k_m_heavy_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/Qwen/Qwen3-32B-GGUF",
+   "filename": "Qwen3-32B-Q4_K_M.gguf",
+   "revision": "938a7432affaec9157f883a87164e2646ae17555",
+   "size_bytes": 19762149024,
+   "sha256": "efd971561896866f0e910cce52761ca77b1b138090c7f15fe284676d57d1f689",
+   "checkedUtc": "2026-11-27T11:31:19Z",
+   "pin": "ok",
+   "headRevision": "938a7432affaec9157f883a87164e2646ae17555",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/19762149024"
+   }
+  },
+  {
+   "entry_id": "gpt-oss-20b_mxfp4_heavy_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggml-org/gpt-oss-20b-GGUF",
+   "filename": "gpt-oss-20b-MXFP4.gguf",
+   "revision": "41e8a94d15d62070b36cf4553a0250717ecf46b8",
+   "size_bytes": 12109566624,
+   "sha256": "27cd6c432c7672cb812a92f611cf3ba7bbc35928262bb1e1253ff4ee6ae35901",
+   "checkedUtc": "2026-11-27T11:31:19Z",
+   "pin": "ok",
+   "headRevision": "41e8a94d15d62070b36cf4553a0250717ecf46b8",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/12109566624"
+   }
+  },
+  {
+   "entry_id": "gemma-4-26b-a4b-it_q4_0_heavy_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggml-org/gemma-4-26B-A4B-it-GGUF",
+   "filename": "gemma-4-26B-A4B-it-Q4_0.gguf",
+   "revision": "1ca99aae748b4b01f609fa51eb23682ee5f00b85",
+   "size_bytes": 14618145824,
+   "sha256": "d208665ab1cd3a69f7a9a4bc59430e8448c8093d9b06334f566ac59d6d504a03",
+   "checkedUtc": "2026-11-27T11:31:19Z",
+   "pin": "ok",
+   "headRevision": "1ca99aae748b4b01f609fa51eb23682ee5f00b85",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/14618145824"
+   }
+  },
+  {
+   "entry_id": "qwen3-14b_q4_k_m_heavy_text_16k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/Qwen/Qwen3-14B-GGUF",
+   "filename": "Qwen3-14B-Q4_K_M.gguf",
+   "revision": "530227a7d994db8eca5ab5ced2fb692b614357fd",
+   "size_bytes": 9001752960,
+   "sha256": "500a8806e85ee9c83f3ae08420295592451379b4f8cf2d0f41c15dffeb6b81f0",
+   "checkedUtc": "2026-11-27T11:31:20Z",
+   "pin": "ok",
+   "headRevision": "530227a7d994db8eca5ab5ced2fb692b614357fd",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/9001752960"
+   }
+  },
+  {
+   "entry_id": "gemma-4-12b-it_q4_k_m_heavy_text_32k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/bartowski/gemma-4-12B-it-GGUF",
+   "filename": "gemma-4-12B-it-Q4_K_M.gguf",
+   "revision": "2ae7d41be21ca62de00a2d320ee9cec50daa3aa6",
+   "size_bytes": 7662533088,
+   "sha256": "3962624dcd25b947d889dc9ae1bf275b61db6cd4dbe694057f34fffef1671509",
+   "checkedUtc": "2026-11-27T11:31:21Z",
+   "pin": "ok",
+   "headRevision": "2ae7d41be21ca62de00a2d320ee9cec50daa3aa6",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/7662533088"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00001-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49981610528,
+   "sha256": "cee60a71507624b42ef6eff87ce2aaf187632c214ab6fcfe97c02f5a5376f883",
+   "checkedUtc": "2026-11-27T11:31:21Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49981610528"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 1,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00002-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 48635816800,
+   "sha256": "274fdfaef6ab52d3a3c55387ee038fb12d2aecff9635b0d966609c2e94a66b16",
+   "checkedUtc": "2026-11-27T11:31:22Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/48635816800"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 2,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00003-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49755444480,
+   "sha256": "14ee63a8b7ff1b21610de3a00eeea785cb1d4dd442052858f4d2a4da95e1b230",
+   "checkedUtc": "2026-11-27T11:31:22Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49755444480"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 3,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00004-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49752068352,
+   "sha256": "3c80d279309723c95e5299b64e994df8aea53133d9dd54ff01775d978a90a050",
+   "checkedUtc": "2026-11-27T11:31:23Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49752068352"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 4,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00005-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49748104448,
+   "sha256": "d12918cff1ad3f4e267a1ec9d124c0066f29981a983584f9823bde6219ca5d2f",
+   "checkedUtc": "2026-11-27T11:31:23Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49748104448"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 5,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00006-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49750233344,
+   "sha256": "4b5a59f999648696e3c03f174c95038a5f910595db9c1eee6bb658cf3388f053",
+   "checkedUtc": "2026-11-27T11:31:23Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49750233344"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 6,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00007-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49754018048,
+   "sha256": "366855f43768806ced21f83c344aab45d9c292761e4a87153a6eda118c94021c",
+   "checkedUtc": "2026-11-27T11:31:23Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49754018048"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_win_hybrid",
+   "index": 7,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00008-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 34484027872,
+   "sha256": "28a93946b17f0ee9fe6191e26fe805a36e0c0c329f73cc28b00d32cdfd8142eb",
+   "checkedUtc": "2026-11-27T11:31:24Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/34484027872"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 0,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00001-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49981610528,
+   "sha256": "cee60a71507624b42ef6eff87ce2aaf187632c214ab6fcfe97c02f5a5376f883",
+   "checkedUtc": "2026-11-27T11:31:24Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49981610528"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 1,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00002-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 48635816800,
+   "sha256": "274fdfaef6ab52d3a3c55387ee038fb12d2aecff9635b0d966609c2e94a66b16",
+   "checkedUtc": "2026-11-27T11:31:24Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/48635816800"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 2,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00003-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49755444480,
+   "sha256": "14ee63a8b7ff1b21610de3a00eeea785cb1d4dd442052858f4d2a4da95e1b230",
+   "checkedUtc": "2026-11-27T11:31:24Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49755444480"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 3,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00004-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49752068352,
+   "sha256": "3c80d279309723c95e5299b64e994df8aea53133d9dd54ff01775d978a90a050",
+   "checkedUtc": "2026-11-27T11:31:25Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49752068352"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 4,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00005-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49748104448,
+   "sha256": "d12918cff1ad3f4e267a1ec9d124c0066f29981a983584f9823bde6219ca5d2f",
+   "checkedUtc": "2026-11-27T11:31:25Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49748104448"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 5,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00006-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49750233344,
+   "sha256": "4b5a59f999648696e3c03f174c95038a5f910595db9c1eee6bb658cf3388f053",
+   "checkedUtc": "2026-11-27T11:31:25Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49750233344"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 6,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00007-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 49754018048,
+   "sha256": "366855f43768806ced21f83c344aab45d9c292761e4a87153a6eda118c94021c",
+   "checkedUtc": "2026-11-27T11:31:26Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/49754018048"
+   }
+  },
+  {
+   "entry_id": "kimi-k2-instruct_ud_q2_k_xl_heavy_text_32k_llamacpp_macos_unified",
+   "index": 7,
+   "repository": "https://huggingface.co/unsloth/Kimi-K2-Instruct-GGUF",
+   "filename": "UD-Q2_K_XL/Kimi-K2-Instruct-UD-Q2_K_XL-00008-of-00008.gguf",
+   "revision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "size_bytes": 34484027872,
+   "sha256": "28a93946b17f0ee9fe6191e26fe805a36e0c0c329f73cc28b00d32cdfd8142eb",
+   "checkedUtc": "2026-11-27T11:31:26Z",
+   "pin": "ok",
+   "headRevision": "23bf90d8196ddfcb3328a6f60c99a9bdb5c1dadf",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/34484027872"
+   }
+  },
+  {
+   "entry_id": "gemma-4-31b-it_q4_0_heavy_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggml-org/gemma-4-31B-it-GGUF",
+   "filename": "gemma-4-31B-it-Q4_0.gguf",
+   "revision": "f39d380138390ea246513ff0f087352f3cfc3a1b",
+   "size_bytes": 17992313088,
+   "sha256": "031dc1c5fa9c5a0abbf3c39c5173fb2af65f5ac2dc2a090268561d3c72dcd834",
+   "checkedUtc": "2026-11-27T11:31:26Z",
+   "pin": "ok",
+   "headRevision": "f39d380138390ea246513ff0f087352f3cfc3a1b",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/17992313088"
+   }
+  },
+  {
+   "entry_id": "qwen3.6-35b-a3b_q4_k_m_heavy_text_8k_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggml-org/Qwen3.6-35B-A3B-GGUF",
+   "filename": "Qwen3.6-35B-A3B-Q4_K_M.gguf",
+   "revision": "52f9f9b8052fb9c8b69bba4a95eda0f319ac3d2a",
+   "size_bytes": 20542732576,
+   "sha256": "f4ffe03c9139e6a905a5d346f77d9fabdd179367c3280dfd005d1e75ca5ed8c8",
+   "checkedUtc": "2026-11-27T11:31:27Z",
+   "pin": "ok",
+   "headRevision": "52f9f9b8052fb9c8b69bba4a95eda0f319ac3d2a",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/20542732576"
+   }
+  },
+  {
+   "entry_id": "inkling-2-mini_iq4_nl_heavy_text_llamacpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggml-org/Inkling-2-Mini-GGUF",
+   "filename": "Inkling-2-Mini-IQ4_NL.gguf",
+   "revision": "0bdc580634ceac4c4d921f452777bf44228de9af",
+   "size_bytes": 17627940768,
+   "sha256": "cbdf3fa9dc50a4124977980f37da4f1fa764b0cfe800d275cd43d26ce2a81af4",
+   "checkedUtc": "2026-11-27T11:31:28Z",
+   "pin": "ok",
+   "headRevision": "0bdc580634ceac4c4d921f452777bf44228de9af",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/17627940768"
+   }
+  },
+  {
+   "entry_id": "whisper-large-v3-turbo_q5_0_transcription_whispercpp_win_cuda",
+   "index": 0,
+   "repository": "https://huggingface.co/ggerganov/whisper.cpp",
+   "filename": "ggml-large-v3-turbo-q5_0.bin",
+   "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+   "size_bytes": 574041195,
+   "sha256": "394221709cd5ad1f40c46e6031ca61bce88931e6e088c188294c6d5a55ffa7e2",
+   "checkedUtc": "2026-11-27T11:31:28Z",
+   "pin": "ok",
+   "headRevision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/574041195"
+   }
+  },
+  {
+   "entry_id": "whisper-base-en_f16_transcription_whispercpp_win_cpu",
+   "index": 0,
+   "repository": "https://huggingface.co/ggerganov/whisper.cpp",
+   "filename": "ggml-base.en.bin",
+   "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+   "size_bytes": 147964211,
+   "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002",
+   "checkedUtc": "2026-11-27T11:31:29Z",
+   "pin": "ok",
+   "headRevision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+   "drift": "same-commit",
+   "gated": false,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/147964211"
+   }
+  }
+ ]
+}
