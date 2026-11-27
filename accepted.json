@@ -5,5 +5,6 @@
   "sizeBytes": 125425,
   "sha256": "2859c4840638918cc22fc233b48ef8c573d604112db2b6058051d265fc282b50",
   "acceptance": "Passed the app's CsvModelCatalogue parser and hardware-filtering checks (reported 2026-11-27): size and SHA-256 match, existing results unchanged, four new research rows excluded until memory requirements are established. Catalogue acceptance only: not runtime compatibility, downloads or local inference.",
-  "published": false
+  "published": true,
+  "publishedUtc": "2026-11-27T11:45:38Z"
 }
