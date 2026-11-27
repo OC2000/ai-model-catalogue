@@ -8,9 +8,13 @@ This runbook is for a catalogue update run, whether manual or scheduled. Every r
 
 Every pull request and report states its validation status in these words:
 
-> **publisher checks passed; app validation pending**
+> **publisher checks passed; app validation pending** (until the GitHub check below has finished)
+> **publisher checks passed; app validation passed** (both required checks succeeded on the PR's head commit)
+> **app validation failed** (either required check failed: never publish)
 
-…or, if a check failed, says which one. Never call `tools/precheck_csv.py` the app validator. The app validator is `AIConnect.Core.CsvModelCatalogue.Parse` (`CsvModelCatalogue.cs`), and it hasn't been integrated into this job.
+Never call `tools/precheck_csv.py` the app validator. The app validator is the production `CsvCatalogue.Validator` (kit 1.1.0, `validator-kit/`, shared `AIConnect.Catalogue` parser), run by the GitHub workflow **App validator** (`.github/workflows/validate-catalogue.yml`) on every pull request. Its required checks are **`validate (ubuntu-latest)`** and **`validate (windows-latest)`**. The workflow validates every added release against the accepted one, fails any change to an existing release, and always validates `latest.json` (which must exist) against the exact bytes it pins.
+
+Warning policy: **errors block, warnings don't.** A validator error, a release-gate error or a failed job is a failed check and blocks merging and publication. Warnings (`RESEARCH_ONLY`, `CAPACITY_UNKNOWN`, `INCOMPLETE_PACKAGE`, `UNRESOLVED_FILE`, `SOURCE_GAPS`, …) never block, but are counted and listed in the release notes and the PR.
 
 ## Rules
 
@@ -43,7 +47,7 @@ Every pull request and report states its validation status in these words:
     - no existing rank changed; new rows are only appended;
     - at most 8 new rows.
     Ranking proposals are never applied by a run: they go into a GitHub issue titled `Ranking proposals YYYY-MM-DD`.
-    - **App validator (when integrated):** the production `CsvCatalogue.Validator` must exit 0 on the new CSV (with `--previous` set to the accepted CSV) and on the proposed pointer (`--manifest`). Warning policy (owner decision 2026-11-27): **errors only** block promotion. Warnings such as `RESEARCH_ONLY`, `CAPACITY_UNKNOWN`, `INCOMPLETE_PACKAGE`, `UNRESOLVED_FILE` and `SOURCE_GAPS` do not block, but every warning is listed in the release notes and PR. The validator report always says `PublicationApproved: false`; approval comes from this gate, not from the report.
+    - **App validator:** both required checks (`validate (ubuntu-latest)`, `validate (windows-latest)`) succeeded on the release PR's head commit, and later on the publish PR's head commit (which validates the proposed `latest.json`). Warning policy (owner decision 2026-11-27): **errors only** block promotion. Warnings such as `RESEARCH_ONLY`, `CAPACITY_UNKNOWN`, `INCOMPLETE_PACKAGE`, `UNRESOLVED_FILE` and `SOURCE_GAPS` do not block, but every warning is listed in the release notes and PR. The validator report always says `PublicationApproved: false`; approval comes from this gate, not from the report.
 
 ## Procedure
 
@@ -63,6 +67,9 @@ Every pull request and report states its validation status in these words:
 6. Run `tools/run_checks.sh <new file> reports/<date>-revN`. Everything must pass. Then write `releases/notes/revN/` with a change summary, unresolved items and a memory report.
 7. If nothing changed, open no release PR; report "no changes".
 8. Otherwise commit, push the branch, and open a PR using the template, labelled **publisher checks passed; app validation pending**.
+   - Wait for the **App validator** workflow on the PR's head commit (poll the check runs, up to 30 minutes). Read both jobs' conclusions and the validator output (job logs or the `validation-*` artifacts).
+   - Both succeeded: change the PR title/status to **publisher checks passed; app validation passed** and add a comment with the validator result and warning counts by code.
+   - Either failed or timed out: label it **app validation failed** (or **app validation inconclusive**), comment with the errors, and stop. Never merge or publish it. The live feed stays unchanged.
 9. **(Suspended: see the notice at the top.)** If the automatic-release gate (rule 12) holds, merge the PR through the API (never a direct push). Otherwise stop here; the PR waits for review.
-10. Publish: on a branch `publish/YYYYMMDD-revN`, run `tools/make_latest.py releases/<new>.csv --url https://raw.githubusercontent.com/OC2000/ai-model-catalogue/<merge commit>/releases/<new>.csv --out latest.json`, set `accepted.json` to the new release (`acceptance`: "publisher checks passed; app validation pending", `published`: true, `publishedUtc` from latest.json), open a PR and merge it.
+10. Publish: on a branch `publish/YYYYMMDD-revN`, run `tools/make_latest.py releases/<new>.csv --url https://raw.githubusercontent.com/OC2000/ai-model-catalogue/<merge commit>/releases/<new>.csv --out latest.json`, set `accepted.json` to the new release (`acceptance`: "publisher checks passed; app validation passed (GitHub check)", `published`: true, `publishedUtc` from latest.json), open a PR, wait for both required checks to succeed on it (they validate the new pointer), then merge it.
 11. Verify: fetch `https://raw.githubusercontent.com/OC2000/ai-model-catalogue/main/latest.json` (allow up to 5 minutes' cache), then the CSV it names, and confirm size and SHA-256. If this fails, report it prominently; the app keeps its previous catalogue.
