@@ -35,7 +35,7 @@ Warning policy: **errors block, warnings don't.** A validator error, a release-g
    - A public mirror is used only when it is byte-identical (same SHA-256) **and** its provenance is established (the publisher released the same bytes).
    - A mirror's repository licence never relicenses its contents.
 7. **Claims stay separate.** Metadata verification, download access, package completeness and runtime compatibility are recorded separately. Never claim app support, runtime compatibility or local testing; only the app can establish those.
-8. **Memory.** Published budgets are never lowered to match an estimate.
+8. **Memory.** Capacity policy (owner decision 2026-11-27): **errors-only publication gating**. Missing capacity evidence (`CAPACITY_UNKNOWN`, blank budgets) is a warning, not a blocker. The app's existing hardware filtering (policy `manager-capacity-2x-1`) is unchanged, so rows without a complete-pipeline budget stay published but are never offered as hardware matches. Runs never invent a budget to make a row matchable. Published budgets are never lowered to match an estimate.
    - New text rows get a reproducible estimate (`tools/estimation/`), recorded with its inputs.
    - A budget that looks tight is flagged for review, not edited.
 9. **Validation before proposing.** The whole candidate CSV must pass `tools/run_checks.sh` (part A: mirror of the app parser; part B: publisher checks; pin integrity) before a PR is opened.
