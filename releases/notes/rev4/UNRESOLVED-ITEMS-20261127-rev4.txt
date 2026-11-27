@@ -1,0 +1,27 @@
+AI Connect Manager — Unresolved Items Report (2026-11-27 rev4)
+
+1. INCOMPLETE PACKAGES (unchanged status; nothing invented)
+- flux-3-image-klein_unresolved_light_image_generation_sdcpp_win_cuda (partial). Its files are pinned: denoiser flux-3-image-klein-UD-Q4_K_XL.gguf at 3,929,944,992 bytes, and a VAE byte-identical to BFL's ae.safetensors. Still missing: a Qwen3-VL-4B-Instruct text-encoder GGUF path for stable-diffusion.cpp, and a complete-pipeline CUDA VRAM budget.
+- krea-2-raw_q4_k_m_heavy_image_generation_sdcpp_win_cuda (partial). Its denoiser is pinned. Still missing: companion encoder and VAE paths for stable-diffusion.cpp. (offload_mode is text_encoders_cpu, but no encoder file is listed.)
+- flux-2-dev_fp8_heavy_image_generation_sdcpp_win_cuda (unknown). No files. unsloth/FLUX.2-dev-FP8 does publish .safetensors as well as .pt. Still needed: confirmation that stable-diffusion.cpp loads those quantized safetensors, or a verified GGUF alternative.
+- moss-image-sft_unresolved_heavy_image_generation_sdcpp_win_cuda (unknown). No files, and no verified stable-diffusion.cpp GGUF denoiser.
+- qwen3.8-27b_unresolved_heavy_text_8k_llamacpp_win_cuda (deprecated). No files. Superseded within the CSV; left as it was.
+
+2. METADATA AND ACCESS: RESOLVED IN REV4
+- All 62 required files have a full commit, exact filename, size_bytes and publisher SHA-256, cross-checked against the tree.
+- Anonymous download access was tested per file by HEAD without downloading: 62 of 62 now resolve with a 302, after the FLUX.1-dev VAE replacement.
+- These are point-in-time observations (2026-11-27T10:43Z). The app's resolver should still check sizes and hashes before and after acquisition, as it already does.
+
+3. RUNTIME COMPATIBILITY QUESTIONS (not tested; recorded for review)
+- Z-Image-Turbo rows use Qwen/Qwen3-4B-GGUF Qwen3-4B-Q4_K_M.gguf as the text encoder. stable-diffusion.cpp's z_image.md lists unsloth/Qwen3-4B-Instruct-2507-GGUF (or Comfy-Org qwen_3_4b.safetensors). Whether the base Qwen3-4B GGUF is an acceptable substitute isn't established here. The row is left unchanged.
+- runtime_version_or_commit is empty in 7 rows. Primary-source runtime pinning (as done for Klein in the JSON catalogue track) has not been repeated for the CSV.
+- The new "public" value in access_requirements needs confirming against the app's accepted vocabulary.
+
+4. MEMORY
+- Kimi-K2 rows: not independently estimated (MLA attention, CPU expert offload and unified memory are outside the estimator's scope). The CSV's publisher-guidance budgets are kept.
+- Image rows: only weights-only floor checks are possible (activations not modelled). Every image budget covers its GPU-resident weights.
+- Two text budgets are below the independent indicative total but above the core estimate: Qwen3-4B (4.5 GiB vs 4.74) and Qwen3-14B (12.0 GiB vs 12.17). Review is recommended; they were not changed.
+- 8 GB VRAM + 64 GB RAM heavy_text gap (from rev3): still open. No measured CPU-offload results.
+
+5. NOT FOUND (carried from rev3, not re-searched)
+- Qwen3.8 9B and Qwen3.8 12B official releases.

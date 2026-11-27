@@ -1,0 +1,11 @@
+{
+ "file": "releases/ai-model-catalogue-v6-20261127-rev4.csv",
+ "bytes": 116250,
+ "partA_mirrorOfAppParser": "pass",
+ "partA_error": null,
+ "rows": 32,
+ "note": "Not the app validator. App validation pending until CsvModelCatalogue.Parse is run on this file.",
+ "partB_publisherChecks": "pass",
+ "partB_errors": [],
+ "partB_warnings": []
+}
