@@ -1,0 +1,2 @@
+precheck=0 pins=0 estimates=0
+RESULT: publisher checks passed; app validation pending

@@ -1,0 +1,30 @@
+{
+ "required_files_json": [
+  {
+   "slot": "main_model",
+   "repository_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+   "revision": "0e5d71fc20036486786f71befa103d23a97b79b1",
+   "filename": "Nemotron-3.5-Bolt-E4B-Q4_K_M.gguf",
+   "size_bytes": 6180446208,
+   "sha256": "c8af2b8aea10a690a1d9491db744a9446660173cb38fc489612b556615a69612",
+   "shard_index": 1,
+   "shard_count": 1,
+   "source_url": "https://huggingface.co/api/models/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB/revision/0e5d71fc20036486786f71befa103d23a97b79b1",
+   "checked_utc": "2026-11-27T11:28:50Z"
+  }
+ ],
+ "_evidence": [
+  {
+   "filename": "Nemotron-3.5-Bolt-E4B-Q4_K_M.gguf",
+   "crossCheck": "detail == tree",
+   "gated": false,
+   "license": "other",
+   "licenseName": "openmdw-1.1",
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/6180446208"
+   }
+  }
+ ]
+}

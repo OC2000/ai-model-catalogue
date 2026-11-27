@@ -1,0 +1,30 @@
+{
+ "required_files_json": [
+  {
+   "slot": "main_model",
+   "repository_url": "https://huggingface.co/ggml-org/Qwen3.6-35B-A3B-GGUF",
+   "revision": "52f9f9b8052fb9c8b69bba4a95eda0f319ac3d2a",
+   "filename": "Qwen3.6-35B-A3B-Q4_K_M.gguf",
+   "size_bytes": 20542732576,
+   "sha256": "f4ffe03c9139e6a905a5d346f77d9fabdd179367c3280dfd005d1e75ca5ed8c8",
+   "shard_index": 1,
+   "shard_count": 1,
+   "source_url": "https://huggingface.co/api/models/ggml-org/Qwen3.6-35B-A3B-GGUF/revision/52f9f9b8052fb9c8b69bba4a95eda0f319ac3d2a",
+   "checked_utc": "2026-11-27T11:28:51Z"
+  }
+ ],
+ "_evidence": [
+  {
+   "filename": "Qwen3.6-35B-A3B-Q4_K_M.gguf",
+   "crossCheck": "detail == tree",
+   "gated": false,
+   "license": "apache-2.0",
+   "licenseName": null,
+   "access": {
+    "result": "verified",
+    "destinationHost": "us.aws.cdn.hf.co",
+    "contentRange": "bytes 0-0/20542732576"
+   }
+  }
+ ]
+}
