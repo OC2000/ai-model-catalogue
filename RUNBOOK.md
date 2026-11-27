@@ -2,7 +2,7 @@
 
 This runbook is for a catalogue update run, whether manual or scheduled. Every run starts from a fresh clone and works only on a new branch. **A run never pushes directly to `main` and never changes a schedule.** It merges and publishes only through the automatic-release gate below.
 
-> **Temporarily pull requests only (owner decision, 2026-11-27).** The automatic-release gate (rule 12, steps 9-11) is **suspended** until the manager's production validator (`CsvModelCatalogue`) is integrated into this job **and** the capacity policy is agreed. Until then a run opens its release PR and stops: it never merges, never edits `latest.json` and never changes `accepted.json`. Merging and publishing are done by a reviewer. Automatic publishing remains the intended workflow once both conditions are met and the owner re-enables it.
+> **Automatic publishing resumed (owner decision 2026-11-27)** after the production validator was integrated as required checks on `main`, the capacity policy was agreed (errors-only gating), and a failing pull request was shown to be blocked from merging (PR #12). A run merges and publishes only through the automatic-release gate (rule 12, steps 9-11); anything else leaves its PR open and the live feed unchanged.
 
 ## Status label (mandatory)
 
@@ -41,7 +41,7 @@ Warning policy: **errors block, warnings don't.** A validator error, a release-g
 9. **Validation before proposing.** The whole candidate CSV must pass `tools/run_checks.sh` (part A: mirror of the app parser; part B: publisher checks; pin integrity) before a PR is opened.
 10. **Failure preserves the baseline.** If research, validation or network access fails, open no release PR. `accepted.json` and `releases/` stay unchanged. At most, open a report-only PR (`reports/` only) describing the failure, or simply report it.
 11. **Publishing goes through the gate.** `latest.json` is written only by `tools/make_latest.py`, only in step 10 below, with the commit-pinned hosted URL and the real time. It is never edited by hand.
-12. **Automatic-release gate (suspended: see the notice at the top).** A run may merge its own release PR and publish only when **all** of these hold; otherwise it leaves the PR open for review and publishes nothing:
+12. **Automatic-release gate.** A run may merge its own release PR and publish only when **all** of these hold; otherwise it leaves the PR open for review and publishes nothing:
     - `tools/run_checks.sh` passed on the new CSV (exit 0), and the baseline check passed at the start of the run;
     - every existing row is unchanged, except for rows explicitly superseded (old row kept; new row with `supersedes_entry_id`) and corrections to factually stale text;
     - no existing rank changed; new rows are only appended;
@@ -70,6 +70,6 @@ Warning policy: **errors block, warnings don't.** A validator error, a release-g
    - Wait for the **App validator** workflow on the PR's head commit (poll the check runs, up to 30 minutes). Read both jobs' conclusions and the validator output (job logs or the `validation-*` artifacts).
    - Both succeeded: change the PR title/status to **publisher checks passed; app validation passed** and add a comment with the validator result and warning counts by code.
    - Either failed or timed out: label it **app validation failed** (or **app validation inconclusive**), comment with the errors, and stop. Never merge or publish it. The live feed stays unchanged.
-9. **(Suspended: see the notice at the top.)** If the automatic-release gate (rule 12) holds, merge the PR through the API (never a direct push). Otherwise stop here; the PR waits for review.
+9. If the automatic-release gate (rule 12) holds, merge the PR through the API (never a direct push). Otherwise stop here; the PR waits for review.
 10. Publish: on a branch `publish/YYYYMMDD-revN`, run `tools/make_latest.py releases/<new>.csv --url https://raw.githubusercontent.com/OC2000/ai-model-catalogue/<merge commit>/releases/<new>.csv --out latest.json`, set `accepted.json` to the new release (`acceptance`: "publisher checks passed; app validation passed (GitHub check)", `published`: true, `publishedUtc` from latest.json), open a PR, wait for both required checks to succeed on it (they validate the new pointer), then merge it.
 11. Verify: fetch `https://raw.githubusercontent.com/OC2000/ai-model-catalogue/main/latest.json` (allow up to 5 minutes' cache), then the CSV it names, and confirm size and SHA-256. If this fails, report it prominently; the app keeps its previous catalogue.
