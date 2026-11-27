@@ -4,7 +4,7 @@ Proposed: `releases/ai-model-catalogue-v6-20261127-rev5.csv`, 36 rows, 125,425 b
 SHA-256 `2859c4840638918cc22fc233b48ef8c573d604112db2b6058051d265fc282b50`.
 Baseline: accepted rev4 (`b796f839…dd22`), unchanged. Not published; `accepted.json` not changed.
 
-Status: **publisher checks passed; app validation pending.**
+Status: **app validation passed** (reported 2026-11-27): the app's parser and hardware-filtering checks passed; size and SHA-256 match; existing model results unchanged; the four new research rows stay excluded until memory requirements are established. Blank runtime versions are accepted for research rows and do not imply runtime compatibility.
 
 ## Existing pins
 All 62 rev4 components: same commit, size and SHA-256 match, destination access verified
@@ -32,7 +32,7 @@ Configs added to `tools/estimation/configs.tsv`, pinned to the original reposito
 the revision, size, SHA-256 and HTTP check were unverified, although rev4 pinned and verified them.
 Only that clause, `reviewed_utc` and `change_note` changed. Details in `provenance/changes-rev5.json`.
 
-## Ranking proposals (not applied)
+## Ranking proposals (reviewed: rankings left unchanged)
 - Qwen3.6-35B-A3B could rank above Qwen3.5-122B-A10B for 24 GB GPUs (fits fully on GPU at 8K by estimate). Needs your preference decision.
 - Inkling 2 Mini should stay last until its memory is established.
 
