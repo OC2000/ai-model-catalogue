@@ -1,0 +1,7 @@
+kit: csv-publisher-kit 1.1.0
+source_checkpoint: b1b5750
+policy: manager-capacity-2x-1
+schema: 6
+zip_sha256: ea28809b16e1f778711ea5c38415772b2fbcb0465184bf2958b7fa6e668feb07
+zip_hash_confirmed_by_coder: pending
+files: verified against SHA256SUMS (17/17) on 2026-11-27

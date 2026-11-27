@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><Version>1.1.0</Version><InformationalVersion>1.1.0+base.b1b5750</InformationalVersion></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/AIConnect.Catalogue/AIConnect.Catalogue.csproj" /></ItemGroup>
+</Project>
