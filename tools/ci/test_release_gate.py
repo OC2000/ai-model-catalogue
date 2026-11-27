@@ -115,6 +115,19 @@ def accepted_json_mismatch_fails(d):
     rc, plan, _ = gate(d)
     assert rc == 1 and any("do not match" in e for e in plan["errors"]), plan["errors"]
 
+@case
+def deleted_pointer_fails(d):
+    os.remove(os.path.join(d, "latest.json")); commit(d, "delete latest.json")
+    rc, plan, _ = gate(d)
+    assert rc != 0 and any("latest.json is missing" in e for e in plan["errors"]), (rc, plan["errors"])
+
+@case
+def missing_pointer_fails_even_without_other_changes(d):
+    sh("git", "rm", "-q", "latest.json", cwd=d); c = commit(d, "no pointer")
+    sh("git", "branch", "-f", "base", c, cwd=d)  # base also lacks it: still an error
+    rc, plan, _ = gate(d)
+    assert rc != 0 and any("latest.json is missing" in e for e in plan["errors"]), (rc, plan["errors"])
+
 failed = 0
 for f in CASES:
     try: f(repo()); print("PASS", f.__name__)

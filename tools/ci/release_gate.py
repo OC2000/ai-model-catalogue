@@ -5,7 +5,7 @@
 - Any modification, deletion or rename of an existing release file is an error (releases are immutable).
 - If no release was added, the release named by HEAD's accepted.json is validated.
 - accepted.json must name an existing release whose size and SHA-256 match.
-- latest.json, if present, is always validated against the exact bytes it names
+- latest.json must exist (missing or deleted is an error) and is always validated against the exact bytes it names
   (raw.githubusercontent.com/OC2000/ai-model-catalogue/<commit>/releases/<name>.csv, read from git at that commit).
   A pointer that cannot be resolved is an error, never a skip.
 
@@ -92,7 +92,9 @@ def main():
                              "previous": None if same else prev_file, "previousPath": None if same else prev_path, "manifest": None})
 
     man = blob(head, "latest.json")
-    if man is not None:
+    if man is None:
+        errors.append("latest.json is missing at HEAD: the live feed pointer must exist")
+    else:
         try:
             m = json.loads(man); url = m.get("csvUrl", "")
         except (ValueError, AttributeError):
