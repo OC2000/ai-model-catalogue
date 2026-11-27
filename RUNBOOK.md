@@ -43,6 +43,7 @@ Every pull request and report states its validation status in these words:
     - no existing rank changed; new rows are only appended;
     - at most 8 new rows.
     Ranking proposals are never applied by a run: they go into a GitHub issue titled `Ranking proposals YYYY-MM-DD`.
+    - **App validator (when integrated):** the production `CsvCatalogue.Validator` must exit 0 on the new CSV (with `--previous` set to the accepted CSV) and on the proposed pointer (`--manifest`). Warning policy (owner decision 2026-11-27): **errors only** block promotion. Warnings such as `RESEARCH_ONLY`, `CAPACITY_UNKNOWN`, `INCOMPLETE_PACKAGE`, `UNRESOLVED_FILE` and `SOURCE_GAPS` do not block, but every warning is listed in the release notes and PR. The validator report always says `PublicationApproved: false`; approval comes from this gate, not from the report.
 
 ## Procedure
 
