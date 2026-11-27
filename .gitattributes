@@ -1,0 +1,5 @@
+# Release bytes and the vendored validator kit are hash-pinned: never convert line endings.
+releases/** -text
+validator-kit/** -text
+latest.json -text
+accepted.json -text
