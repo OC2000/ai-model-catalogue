@@ -41,7 +41,7 @@ jobs:
       - name: Verify kit, build, smoke test, validate
         shell: pwsh
         run: |
-          ./validator-kit/tools/CsvCatalogue.Validator/Verify-Kit.ps1 -KitRoot validator-kit
+          pwsh -NoProfile -File ./validator-kit/tools/CsvCatalogue.Validator/Verify-Kit.ps1 -KitRoot validator-kit
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           Set-Location validator-kit
           dotnet --version
@@ -49,7 +49,7 @@ jobs:
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           dotnet build tools/CsvCatalogue.Validator -c Release --no-restore
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          ./tools/CsvCatalogue.Validator/Test-Kit.ps1 -OutputDirectory ../out/synthetic-smoke
+          pwsh -NoProfile -File ./tools/CsvCatalogue.Validator/Test-Kit.ps1 -OutputDirectory ../out/synthetic-smoke
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           $dll = "tools/CsvCatalogue.Validator/bin/Release/net10.0/CsvCatalogue.Validator.dll"
           dotnet $dll --csv "../$env:CANDIDATE" --kind candidate --previous ../previous.csv --json ../out/validation.json
