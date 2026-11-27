@@ -3,5 +3,7 @@ source_checkpoint: b1b5750
 policy: manager-capacity-2x-1
 schema: 6
 zip_sha256: ea28809b16e1f778711ea5c38415772b2fbcb0465184bf2958b7fa6e668feb07
-zip_hash_confirmed_by_coder: kit files confirmed byte-for-byte by reviewer (2026-11-27); PR #7 approved at ac2ab7e
 files: verified against SHA256SUMS (17/17) on 2026-11-27
+zip_size_bytes: 23687
+status: accepted by owner 2026-11-27 ("ok commit and accept"); parent checkpoint b1b5750; embedded kit documents keep their historical review status
+hosted_runner_evidence: PR #7 at ac2ab7ece65f6ccd165a7c59fc1db9c2e66bf180, run 46014756538 (Linux and Windows passed)
